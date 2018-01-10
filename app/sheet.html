@@ -1,0 +1,41 @@
+<html ng-app='sheet'>
+  <head>
+  </head>
+  <body>
+    <link rel='stylesheet' href='../bower_components/normalize.css/normalize.css'>
+    <link rel='stylesheet' href='../bower_components/milligram/dist/milligram.css'>
+    <link rel='stylesheet' href='css/sheet.css'>
+
+    <sheet ng-controller='sheetController'>
+    <grid>
+    <row header>
+    <column header><cell>&nbsp;</cell></column>
+    <column ng-repeat='column in range(cx) track by $index'>
+    <cell>{{$index | alpha}}</cell>
+    </column>
+    </row>
+
+    <row ng-repeat="row in grid">
+    <column header>
+    <cell>{{$index}}</cell>
+    </column>
+    <column ng-repeat="cell in row">
+    <cell contenteditable='true'>{{cell | humanize}}</cell>
+    </column>
+    </row>
+
+    </grid>
+    <grid-summary>
+      GRID: [{{cy}}x{{cx}}]
+    </grid-summary>
+    <grid-controls>
+      <button class='add-rows' ng-click='addRows()'> add rows </button>
+      <button class='add-columns' ng-click='addColumns()'> add columns </button>
+    </grid-controls>
+    </sheet>
+
+    <script type='text/javascript' src='../bower_components/angular/angular.min.js'></script>
+    <script type='text/javascript' src='js/sheet.js'></script>
+
+  </body>
+</html>

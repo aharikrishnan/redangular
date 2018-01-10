@@ -1,0 +1,31 @@
+body {
+  font-family: "Menlo", "Consolas", "Liberation Mono", "Monaco", "monospace";
+}
+grid{
+  display:table;
+}
+[header]{
+  background: #c6c6c6;
+}
+column[header] cell{
+  min-width:50px;
+}
+row{
+  display:table-row;
+  margin: 2px;
+}
+column{
+  display:table-cell;
+  margin: 2px;
+  overflow:scroll;
+}
+cell{
+  display:inline-block;
+  width:100%;
+  min-width: 55px;
+  border: .3px solid #eee;
+  padding: 3px;
+}
+cell:focus{
+  border: .5px solid ##2EA9DF;
+}
